@@ -1,1 +1,66 @@
+import java.util.Scanner;
+import java.util.Random;
+public class quicksort
+{
+   public static void quicksortfn(int a[],int low,int high)
+    {
+        if(low<high)
+        {
+          int pi=partition(a,low,high);
+          quicksortfn(a,low,pi-1);
+          quicksortfn(a,pi+1,high);
+        }
+    }
+    public static int partition(int a[],int low,int high)
+    {
+        int partition=a[high];
+        int temp;
+        int i=low-1;
+        for(int j=low;j<=high-1;j++)
+        {
+            if(a[j]<=partition)
+            {
+                i++;
+                temp=a[j];
+                a[j]=a[i];
+                a[i]=temp;
+                
+            }
+        }
+        temp=a[i+1];
+        a[i+1]=a[high];
+        a[high]=temp;
+        return i+1;
+    }
+  
+
+ 
+    public static void main(String[] args)
+    {
+        int n,i;
+        quicksort q;
+        Random rand=new Random(); 
+        Scanner in =new Scanner(System.in);
+        System.out.println("enter the size");
+        n=in.nextInt();
+        int  a[] = new int[n];
+       for(i=0;i<n;i++)
+        {
+            a[i]=rand.nextInt(n);
+        }
+        System.out.println("the elements are");
+        for(i=0;i<n;i++)
+        {
+        System.out.println(+a[i]);
+            
+        }
+        quicksortfn(a,0,n-1);
+        System.out.println("the sorted elements are");
+        for(i=0;i<n;i++)
+        {
+            System.out.println(a[i]);
+        }
+        
+    }
+}
 
