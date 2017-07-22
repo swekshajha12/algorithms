@@ -16,8 +16,8 @@ class dijk{
             spt[u]=1;
             for(int j=0;j<n;j++)
             {
-                if(spt[j]!=1&&g[u][v]!=0&&d[u]!=999&&d[u]+g[u][v]<d[v])
-                d[v]=d[u]+g[u][v];
+                if(spt[j]!=1&&g[u][j]!=0&&d[u]!=999&&d[u]+g[u][j]<d[j])
+                d[j]=d[u]+g[u][j];
             }
         }
         printsolution(d,n);
@@ -30,7 +30,7 @@ class dijk{
           System.out.println(i+"tt"+d[i]);
       }
     }
-    int mimimum(int d[],int spt[],int n)
+    int minimum(int d[],int spt[],int n)
     {
         int min=999 , min_index=-1;
         for(int v=0;v<n;v++)
@@ -46,7 +46,7 @@ class dijk{
         int V,n;
         Dijkstra t=new Dijkstra();
         int g[][]=new int[50][50];
-        Scanner in = new Scanner;
+        Scanner in = new Scanner();
         System.out.println("enter the no of vertices");
         n=in.nextInt();
         system.out.println("enter the source vertex");
