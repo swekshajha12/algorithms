@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.Scanner;
 class dijk{
     void Dijkfn(int g[][],int V,int n)
     {
@@ -25,7 +25,7 @@ class dijk{
     void printsolution(int d[],int n)
     {
       System.out.println("vertex distance from source");
-      for(i=0;i<n;i++)
+      for(int i=0;i<n;i++)
       {
           System.out.println(i+"tt"+d[i]);
       }
@@ -44,15 +44,15 @@ class dijk{
     public static void main(String[] args)
     {
         int V,n;
-        Dijkstra t=new Dijkstra();
+        dijk t=new dijk();
         int g[][]=new int[50][50];
-        Scanner in = new Scanner();
+        Scanner in = new Scanner(System.in);
         System.out.println("enter the no of vertices");
         n=in.nextInt();
         system.out.println("enter the source vertex");
         V=in.nextInt();
-        sytem.out.println("enter the graph");
-        for(i=1;i<=n;i++)
+        System.out.println("enter the graph");
+        for(int i=1;i<=n;i++)
         {
             for(int j=1;j<=n;j++)
             {
