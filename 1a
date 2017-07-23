@@ -1,0 +1,44 @@
+
+import java.util.Scanner;
+class Student
+{
+    String usn;
+    String name;
+    String branch;
+    long phone;
+    void getdetails()
+    {
+        Scanner in=new Scanner(System.in);
+        System.out.println("usn");
+        usn=in.nextLine();
+         System.out.println("name");
+         name=in.nextLine();
+          System.out.println("branch");
+          branch=in.nextLine();
+           System.out.println("phone");
+           phone=in.nextLong();
+           
+    }
+    void putdetails()
+    {
+         System.out.println("usn"+usn+"name"+name+"branch"+branch+"phone"+phone);
+          System.out.println("\n");
+    }
+    public static void main(String[] args)
+    {
+       Scanner in=new Scanner(System.in);
+        int n,i;
+     
+         System.out.println("enter the no of students");
+         n=in.nextInt();
+            Student a[]=new Student[n];
+            for(i=0;i<n;i++)
+            a[i]=new Student();
+            for(i=0;i<n;i++)
+            a[i].getdetails();
+            for(i=0i<n;i++)
+            a[i].putdetails();
+         
+    }
+    }
+    
